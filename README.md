@@ -10,12 +10,17 @@ https://www.kovo.co.kr/game/v-league/11110_schedule_list.asp?season=014&team=&s_
 ![homepage](./image/homepage.PNG)
 
 
+
 해당 날짜의 상세결과를 통하여, 
+
 
 ![detail](./image/detail.PNG)
 
+
 상세정보들을 확인할 수 있다.
+
 저는 년도-월-일, 원정팀, 홈팀, 경기장명, 관중수, 원정팀점수, 홈팀점수 를 갖고왔습니다.
+
 
 ![dataColumn](./image/dataColumn.PNG)
 
