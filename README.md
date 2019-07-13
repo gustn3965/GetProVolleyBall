@@ -118,11 +118,11 @@ Mac에서는 Mac전용 ChromeDriver를 다운 받으셔야 합니다.
 받으신 후, 
 
 VolleyBall.py 에서 
-'''
+```
 def getDriver(self):
     path = os.getcwd()
     self.driverPath = path+"/chromedriver.exe"
-'''
+```
 
 에서 chromedriver.exe를 [mac chromedirver] 로 바꿔주시면 됩니다. 
 
