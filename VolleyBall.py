@@ -2,15 +2,24 @@ from selenium import webdriver
 import time
 import pandas as pd
 import re
-
+import os
 
 class VolleyBall():
     def __init__(self):
         self.option = webdriver.ChromeOptions()
         self.option.add_argument('headless')
         self.option.add_argument('hide_console')
-        self.driver = webdriver.Chrome("C:/Users/Administrator/PycharmProjects/PracticeDesinApi/chromedriver.exe",
+
+        self.getDriver()
+
+
+        self.driver = webdriver.Chrome(self.driverPath,
                                        options=self.option)
+
+    def getDriver(self):
+        path = os.getcwd()
+        self.driverPath = path+"/chromedriver.exe"
+
 
     def getData(self, url, progressBar):
         self.dict = {'date': [], 'sex': [], 'visitTeam': [], 'homeTeam': [], 'playTimes': [], 'stageName': [],
