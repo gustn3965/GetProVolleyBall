@@ -46,6 +46,7 @@ class VolleyWindow(QMainWindow, form_class):
         self.volley = VolleyBall.VolleyBall()
         self.volley.getSession("https://www.kovo.co.kr/game/v-league/11110_schedule_list.asp?season=014")
 
+    # 해당 리그 가져오기
     def btn_clicked1(self):
 
         self.label.setText(" 가져오는 중...")
@@ -71,6 +72,7 @@ class VolleyWindow(QMainWindow, form_class):
                               'homeScore']
         self.tableWidget.setHorizontalHeaderLabels(data_column_header)
 
+    # 해당 날짜 가져오기
     def btn_clicked_2(self):
         colum_idx_lookup = {'date': 0, 'sex': 1, 'visitTeam': 2, 'homeTeam': 3, 'playTimes': 4, 'stageName': 5,
                             'volume': 6, 'visitScore': 7, 'homeScore': 8}
@@ -93,6 +95,7 @@ class VolleyWindow(QMainWindow, form_class):
             for row, val in enumerate(v):
                 self.tableWidget.setItem(row, col, QTableWidgetItem(str(val)))
 
+    # 저장하기.
     def btn_clicked_3(self):
         filter = "csv(*.csv)"
 
@@ -102,6 +105,7 @@ class VolleyWindow(QMainWindow, form_class):
         self.volley.df.to_csv(fname[0], mode='a', index=False, encoding="euc-kr")
         print(len(fname))
 
+    # 모든 날짜 가져오기
     def btn_clicked_4(self):
         self.worker = QThread()
         self.worker.start()
@@ -131,6 +135,7 @@ class VolleyWindow(QMainWindow, form_class):
                 for row, val in enumerate(v):
                     self.tableWidget.setItem(row, col, QTableWidgetItem(str(val)))
 
+    # -> 추가하기
     def btn_clicked_6(self):
 
         selectList = self.listWidget.currentItem().text()
@@ -141,6 +146,7 @@ class VolleyWindow(QMainWindow, form_class):
         print(self.row_text)
         self.listWidget_3.addItem(QListWidgetItem(selectList))
 
+    # <- 삭제하기
     def btn_clicked_7(self):
 
         selectList = self.listWidget_3.currentItem().text()
@@ -151,6 +157,8 @@ class VolleyWindow(QMainWindow, form_class):
 
         print(self.row_text)
 
+
+    # 선택한 리그 모두 csv파일로 저장하기
     def btn_clicked_5(self):
 
         filePath = QFileDialog.getExistingDirectory(self, '폴더를 선택해주세요')
