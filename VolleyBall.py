@@ -49,7 +49,7 @@ class VolleyBall():
             rcv_count += 1
             print(rcv_count, "개 받는 중 ")
             progressBar.setValue(rcv_count)
-            driverDetail = webdriver.Chrome("C:/Users/Administrator/PycharmProjects/PracticeDesinApi/chromedriver.exe",
+            driverDetail = webdriver.Chrome(self.driverPath,
                                             options=self.option)
             driverDetail.get(address)
 
@@ -120,7 +120,7 @@ class VolleyBall():
 
     def getRange(self, session):
         url = "https://www.kovo.co.kr/game/v-league/11110_schedule_list.asp?season=" + session
-        self.driver = webdriver.Chrome("C:/Users/Administrator/PycharmProjects/PracticeDesinApi/chromedriver.exe",
+        self.driver = webdriver.Chrome(self.driverPath,
                                        options=self.option)
         self.driver.get(url)
         self.driver.find_elements_by_class_name('selectBox-label')[1].click()
