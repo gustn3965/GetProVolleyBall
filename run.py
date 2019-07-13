@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 from PyQt5.QtCore import *
-
+import os
 import pandas as pd
 import VolleyBall
 
@@ -41,6 +41,8 @@ class VolleyWindow(QMainWindow, form_class):
         self.pushButton_7.clicked.connect(self.btn_clicked_7)
 
         self.pushButton_5.clicked.connect(self.btn_clicked_5)
+
+        self.pushButton_8.clicked.connect(self.btn_clicked_8)
 
     def getSession(self):
         self.volley = VolleyBall.VolleyBall()
@@ -176,6 +178,32 @@ class VolleyWindow(QMainWindow, form_class):
                 self.volley.getData(url, self.progressBar)
                 self.volley.df.to_csv(str(filePath) + "/" + session + "_" + date + ".csv", mode='a', index=False,
                                       encoding="euc-kr")
+
+
+    # 여러개 데이터 한개로 합치기
+    def btn_clicked_8(self):
+        filePath = QFileDialog.getExistingDirectory(self, '폴더를 선택해주세요')
+        print(filePath)
+        file_list = os.listdir(filePath)
+
+        print(file_list)
+
+        dict = {'date': [], 'sex': [], 'visitTeam': [], 'homeTeam': [], 'playTimes': [], 'stageName': [],
+                            'volume': [], 'visitScore': [], 'homeScore': []}
+        dfs = pd.DataFrame(dict)
+        for file in file_list :
+            print(str(filePath)+"/"+file)
+            df = pd.read_csv(str(filePath)+"/"+file,encoding="euc-kr", index_col=False)
+            dfs = pd.concat([dfs,df])
+
+
+        print(dfs)
+
+        dfs.to_csv(filePath+"/result.csv", encoding="euc-kr",index=False,mode='w')
+
+
+
+
 
 
 class ThreadClass(QThread):

@@ -202,6 +202,26 @@
         </property>
        </widget>
       </item>
+      <item row="4" column="4">
+       <widget class="QPushButton" name="pushButton_8">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>102</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>여러개 데이터
+ 한개로 합치기</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
    </layout>
