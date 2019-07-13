@@ -126,5 +126,5 @@ def getDriver(self):
 
 에서 chromedriver.exe를 [mac chromedirver] 로 바꿔주시면 됩니다. 
 
-![mac](./image/mac.JPG)
+![mac](./image/mac.jpg)
 
