@@ -31,7 +31,7 @@ https://www.kovo.co.kr/game/v-league/11110_schedule_list.asp?season=014&team=&s_
 
 
 # 사용방법-1  
-## 1개의 리그에서 해당 월의 데이터만 가져오기 및 csv 저장하기 
+### 1개의 리그에서 해당 월의 데이터만 가져오기 및 csv 저장하기 
 
 ![gui1](./image/gui1.PNG)
 
@@ -58,7 +58,7 @@ run.py를 실행하면 몇초 지나고 GUI창이 뜹니다.
 
 
 # 사용방법 -2 
-## 1개의 리그 데이터의 모든 경기 가져오기 및 csv로 저장하기 
+### 1개의 리그 데이터의 모든 경기 가져오기 및 csv로 저장하기 
 
 리그를 선택하고, **해당 리그 찾기** 버튼을 클릭하신 다음에,
 
@@ -70,7 +70,7 @@ run.py를 실행하면 몇초 지나고 GUI창이 뜹니다.
 
 
 # 사용방법 -3 
-## 여러개의 리그 데이터 모든 경기 한번에 csv로 저장하기.
+### 여러개의 리그 데이터 모든 경기 한번에 csv로 저장하기.
 
 ***이 방법은 데이터를 가져온 것을 tableWidget에 보여주지 않습니다***
 
@@ -104,4 +104,27 @@ run.py를 실행하면 몇초 지나고 GUI창이 뜹니다.
 
 위의 결과로 여러개의 데이터들이 있는 폴더를 선택하시면 **result.csv** 파일이라는 이름으로 하나가 생성됩니다.
 
+
+# Mac에서 실행하기.
+
+해당프로그램은 window기반으로 작성되었습니다.
+
+본 프로젝트를 다운받으시면 프로젝트 폴더내에 chromedirver.exe 가 있습니다만,
+
+Mac에서는 Mac전용 ChromeDriver를 다운 받으셔야 합니다.
+
+이 프로젝트 폴더에 기존 chromedriver.exe는 삭제하시고 대채하시면 됩니다.
+
+받으신 후, 
+
+VolleyBall.py 에서 
+```
+def getDriver(self):
+    path = os.getcwd()
+    self.driverPath = path+"/chromedriver.exe"
+```
+
+에서 chromedriver.exe를 [mac chromedirver] 로 바꿔주시면 됩니다. 
+
+![mac](./image/mac.JPG)
 
