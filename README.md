@@ -90,6 +90,7 @@ run.py를 실행하면 몇초 지나고 GUI창이 뜹니다.
 
 (session은 리그들을 구별해주는 key입니다. 물론 date를 보고 리그들을 구별할 수 있습니다.)
 
+
 ![gui3_result](./iamge/gui3_result.PNG)
 
 
