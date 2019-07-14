@@ -20,7 +20,7 @@ https://www.kovo.co.kr/game/v-league/11110_schedule_list.asp?season=014&team=&s_
 
 상세정보들을 확인할 수 있다.
 
-저는 년도-월-일, 원정팀, 홈팀, 경기장명, 관중수, 원정팀점수, 홈팀점수 를 갖고왔습니다.
+저는 년도-월-일 , 남자/여자 , 원정팀, 홈팀, 경기시간, 경기장명, 관중수, 원정팀점수, 홈팀점수 를 갖고왔습니다.
 
 
 ![dataColumn](./image/dataColumn.PNG)
